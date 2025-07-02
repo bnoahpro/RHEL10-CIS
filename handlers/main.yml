@@ -247,6 +247,7 @@
 - name: Auditd immutable check
   ansible.builtin.command: grep -c "^-e 2" /etc/audit/rules.d/99_auditd.rules
   changed_when: false
+  failed_when: false
   register: discovered_auditd_immutable_check
 
 - name: Audit immutable fact
